@@ -1,3 +1,7 @@
+pacchetti:
+    resource: "@PacchettiBundle/Resources/config/routing.yml"
+    prefix:   /pacchetti
+
 anagrafiche:
     resource: "@AnagraficheBundle/Resources/config/routing.yml"
     prefix:   /anagrafiche
