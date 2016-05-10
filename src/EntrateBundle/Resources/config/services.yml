@@ -1,0 +1,4 @@
+services:
+#    entrate.example:
+#        class: EntrateBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

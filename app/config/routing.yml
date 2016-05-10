@@ -1,0 +1,12 @@
+anagrafiche:
+    resource: "@AnagraficheBundle/Resources/config/routing.yml"
+    prefix:   /anagrafiche
+
+entrate:
+    resource: "@EntrateBundle/Controller/"
+    type:     annotation
+    prefix:   /entrate
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
