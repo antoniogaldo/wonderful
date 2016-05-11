@@ -4,7 +4,7 @@
   
   <!-- inizio colonna form aggiungi cliente -->
         <div class="col-md-6">
-          <h2>Crea nuovo cliente</h2>
+          <h2>Lista clienti</h2>
           <br>
           <div class="panel panel-default">
   <!-- Default panel contents -->
@@ -12,7 +12,15 @@
 
   <!-- Table -->
   <table class="table">
-    ...
+    <tbody>
+      <td><ul>
+  {% for cliente in form_lista %}
+    <li>{{ cliente.cognome }} {{ cliente.nome }}</li>
+  {% endfor %}
+</ul></td>
+      
+
+    </tbody>
   </table>
 </div>
               <!-- fine colonna form aggiungi cliente -->
