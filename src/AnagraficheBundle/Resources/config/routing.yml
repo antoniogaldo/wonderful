@@ -1,6 +1,9 @@
 crea_anagrafiche:
     path:  /crea
     defaults: { _controller: AnagraficheBundle:Anagrafiche:create }
+lista_anagrafiche:
+    path:  /lista
+    defaults: { _controller: AnagraficheBundle:Anagrafiche:view }
 
 
     

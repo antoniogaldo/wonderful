@@ -36,4 +36,19 @@ class AnagraficheController extends Controller
         		'form' => $form->createView(),
         	));
     }
+
+    public function viewAction()
+
+    
+    {
+
+        $cliente = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
+
+        
+
+        return $this->render('AnagraficheBundle:Anagrafiche:lista_clienti.html.twig', array(
+            'form_lista' => $cliente,
+        ));
+    }
+
 }
