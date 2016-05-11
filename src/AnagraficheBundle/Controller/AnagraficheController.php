@@ -37,10 +37,25 @@ class AnagraficheController extends Controller
         	));
     }
 
-    public function viewAction()
+    public function viewAction(Request $request)
 
     
     {
+        $cliente = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
+
+        $form = $this->createForm(nuovo_clienteFormType::class, $cliente);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // Salvo cose.
+            $cliente = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($cliente);
+
+            $em->flush(); }
 
         $cliente = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
 
@@ -48,7 +63,10 @@ class AnagraficheController extends Controller
 
         return $this->render('AnagraficheBundle:Anagrafiche:lista_clienti.html.twig', array(
             'form_lista' => $cliente,
+            'form' => $form->createView(),
         ));
     }
+
+    
 
 }

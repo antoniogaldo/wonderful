@@ -18,20 +18,101 @@
   <br>
           <div class="panel panel-default">
 
-  <div class="panel-heading">Panel heading</div>
+
 
   <!-- Table -->
   <table class="table">
-    <tbody>
-      <td><ul>
+  <thead class="thead-inverse">
+  
+    <tr>
+      
+      <th>Nome</th>
+      <th>Cognome</th>
+      
+    </tr>
+  </thead>
   {% for cliente in form_lista %}
-    <li>{{ cliente.cognome }} {{ cliente.nome }}</li>
-  {% endfor %}
-</ul></td>
+    <tr>
+
+      
+      <td data-toggle="collapse" data-parent="#accordion" href="#collapse{{cliente.id}}" aria-expanded="true" aria-controls="collapse{{cliente.id}}">{{ cliente.cognome }}</td>
+
+
+      <td>{{ cliente.nome }}</td>
+    </tr>
+
+    <td colspan="6" class="hiddenRow"><div id="collapse{{cliente.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{cliente.id}}">
+
+        <div class="panel-body">
+
+          {{ form_start(form, { 'attr': {'class': 'form-horizontal'} })}}
+            <div class="form-group">
+              <label for="nome" class="col-sm-2 control-label">Nome</label>
+              <div class="col-sm-5">
+                
+                {{ form_row(form.nome, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cognome" class="col-sm-2 control-label">Cognome</label>
+              <div class="col-sm-5">
+                
+                {{ form_row(form.cognome, { 'attr': {'class': 'form-control', 'placeholder': 'cognome'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="data" class="col-sm-2 control-label">Data di nascita</label>
+              <div class="col-sm-4">
+                
+                {{ form_row(form.data, { 'attr': {'placeholder': 'data'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="indirizzo" class="col-sm-2 control-label">Indirizzo</label>
+              <div class="col-sm-6">
+                
+                {{ form_row(form.indirizzo, { 'attr': {'class': 'form-control', 'placeholder': 'indirizzo'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-5">
+                
+                {{ form_row(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'email'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+              <div class="col-sm-4">
+                
+                {{ form_row(form.telefono, { 'attr': {'class': 'form-control', 'placeholder': 'telefono'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="persone_aggiuntive" class="col-sm-2 control-label">Persone aggiuntive</label>
+              <div class="col-sm-2">
+                
+                {{ form_row(form.personeAggiuntive, { 'attr': {'class': 'form-control', 'placeholder': ''  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-2">
+                
+                {{ form_row(form.save, { 'attr': {'class': 'btn btn-default' } })}}
+        </div>
+
+          {{ form_end(form) }}
+          {% endfor %}
+
+  
+</table>
+    
+  
+ 
+
       
 
-    </tbody>
-  </table>
+  
 </div>
               <!-- fine colonna form aggiungi cliente -->
           
