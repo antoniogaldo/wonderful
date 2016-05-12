@@ -19,9 +19,9 @@ class aggiungi_personeFormType extends AbstractType
         $builder 
             ->add('nome', TextType::class, array('label' => false))
             ->add('cognome', TextType::class, array('label' => false))
-            ->add('cliente', EntityType::class, array('class' => 'AnagraficheBundle:nuovo_cliente', 'choice_label' => 'cognome'))
+            ->add('cliente', EntityType::class, array('class' => 'AnagraficheBundle:nuovo_cliente', 'choice_label' => 'cognome','label' => false))
             ->add('data', DateType::class, array('label' => false))
-            ->add('save', SubmitType::class, array('label' => false))
+            ->add('save', SubmitType::class, array('label' => 'Inserisci'))
         ;
     }
 }

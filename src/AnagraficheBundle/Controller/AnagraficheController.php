@@ -64,6 +64,31 @@ class AnagraficheController extends Controller
         ));
     }
 
+     public function editclientiAction(Request $request)
+    {
+        $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
+
+         $form = $this->createForm(nuovo_clienteFormType::class, $clienti);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Salvo cose.
+            $clienti = $clienti->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($clienti);
+            $em->flush();
+
+             return $this->redirectToRoute('lista_clienti');
+
+        }
+        
+        return $this->render('AnagraficheBundle:Anagrafiche:edit_cliente.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+   
     public function apiListClientiAction(Request $request) {
         $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
 

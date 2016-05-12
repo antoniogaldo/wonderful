@@ -34,7 +34,7 @@
           <tr>
             <td>{{ cliente.cognome }}</td>
             <td>{{ cliente.nome }}</td>
-            <td><a class="modal" href="{{ path('modifica_cliente', {id: cliente.id}) }}">Edit</a></td>
+            <td><a class="ng-modal" href="{{ path('modifica_cliente', {id: cliente.id}) }}">Edit</a></td>
           </tr>
           {% endfor %}
         </tbody>
