@@ -3,6 +3,7 @@
 namespace AnagraficheBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * nuovo_cliente
@@ -64,11 +65,14 @@ class nuovo_cliente
     private $telefono;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="persone_aggiuntive", type="integer")
+     * @ORM\OneToMany(targetEntity="aggiungi_persone", mappedBy="persone_aggiunte")
      */
     private $personeAggiuntive;
+
+    public function __construct()
+    {
+        $this->personeAggiuntive = new ArrayCollection();
+    }
 
 
     /**
@@ -228,7 +232,7 @@ class nuovo_cliente
     /**
      * Set personeAggiuntive
      *
-     * @param integer $personeAggiuntive
+     * @param ArrayCollection $personeAggiuntive
      *
      * @return nuovo_cliente
      */

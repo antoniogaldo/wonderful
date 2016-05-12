@@ -4,6 +4,13 @@ crea_anagrafiche:
 lista_anagrafiche:
     path:  /lista
     defaults: { _controller: AnagraficheBundle:Anagrafiche:view }
+modifica_cliente:
+    path:  /cliente/{id}/edit
+    defaults: { _controller: AnagraficheBundle:Anagrafiche:editClienti }
+
+api_cliente:
+    path:  /api
+    defaults: { _controller: AnagraficheBundle:Anagrafiche:apiListClienti }
 
 
     

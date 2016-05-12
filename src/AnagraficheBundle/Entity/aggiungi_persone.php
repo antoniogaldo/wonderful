@@ -42,6 +42,12 @@ class aggiungi_persone
      */
     private $data;
 
+    /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="nuovo_cliente", inversedBy="personeAggiuntive")
+     */
+    private $cliente;
 
     /**
      * Get id
@@ -124,5 +130,28 @@ class aggiungi_persone
     {
         return $this->data;
     }
-}
 
+    /**
+     * Set data
+     *
+     * @param nuovo_cliente $cliente
+     *
+     * @return aggiungi_persone
+     */
+    public function setCliente($cliente)
+    {
+        $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    /**
+     * Get data
+     *
+     * @return nuovo_cliente
+     */
+    public function getCliente()
+    {
+        return $this->cliente;
+    }
+}
