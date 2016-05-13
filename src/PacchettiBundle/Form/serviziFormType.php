@@ -18,7 +18,7 @@ class serviziFormType extends AbstractType
 
         $builder
 
-            ->add('servizi_aggiuntivo', EntityType::class, array('class' => 'PacchettiBundle:nuovo_pacchetto', 'choice_label' => 'nome','label' => false))
+            ->add('persone', EntityType::class, array('class' => 'PacchettiBundle:nuovo_pacchetto', 'choice_label' => 'nomePacchetto','label' => false))
             ->add('nomeServizio', TextType::class, array('label' => false))
             ->add('costo_servizio', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'Inserisci'))

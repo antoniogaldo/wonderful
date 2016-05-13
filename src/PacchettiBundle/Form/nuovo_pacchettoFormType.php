@@ -20,7 +20,6 @@ class nuovo_pacchettoFormType extends AbstractType
             ->add('nomePacchetto', TextType::class, array('label' => false))
             ->add('dataInizio',DateType::class, array('label' => false))
             ->add('dataFine',DateType::class, array('label' => false))
-            ->add('servizi', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'Inserisci'))
         ;
     }
