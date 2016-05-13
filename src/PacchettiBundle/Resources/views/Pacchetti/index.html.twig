@@ -50,10 +50,48 @@
           
           {{ form_end(form1) }}
         </div></div>
-        <!-- inizio colonna form persone aggiuntive -->
+       <!-- inizio colonna form persone aggiuntive -->
         <div class="col-md-6">
-        	
+        <h2>Aggiungi persona</h2>
+          <br>
+
+        {{ form_start(form_persone, { 'attr': {'class': 'form-horizontal'} })}}
+            <div class="form-group">
+              <label for="nome" class="col-sm-2 control-label">Nome</label>
+              <div class="col-sm-5">
+                
+                {{ form_row(form_persone.nome, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cognome" class="col-sm-2 control-label">Cognome</label>
+              <div class="col-sm-5">
+                
+                {{ form_row(form_persone.cognome, { 'attr': {'class': 'form-control', 'placeholder': 'cognome'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="data" class="col-sm-2 control-label">Data di nascita</label>
+              <div class="col-sm-4">
+                
+                {{ form_row(form_persone.data, { 'attr': {'placeholder': 'data'  } })}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cliente" class="col-sm-2 control-label">Cliente</label>
+              <div class="col-sm-5">
+                
+                {{ form_row(form_persone.cliente, { 'attr': {'class': 'form-control', 'placeholder': 'cliente'  } })}}
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-2">
+                
+                {{ form_row(form_persone.save, { 'attr': {'class': 'btn btn-default' } })}}
+          
         </div>
+        {{ form_end(form_persone) }}
         <!-- fine colonna form persone aggiuntive -->
 </div>
 {%endblock%}

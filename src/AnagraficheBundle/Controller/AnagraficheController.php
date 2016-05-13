@@ -58,9 +58,11 @@ class AnagraficheController extends Controller
     public function viewAction(Request $request)
     {
         $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
+        $aggiungi_persone = $this->getDoctrine()->getRepository('AnagraficheBundle:aggiungi_persone')->findAll();
 
         return $this->render('AnagraficheBundle:Anagrafiche:lista_clienti.html.twig', array(
             'clienti' => $clienti,
+            'aggiungi_persone' => $aggiungi_persone,
         ));
     }
 

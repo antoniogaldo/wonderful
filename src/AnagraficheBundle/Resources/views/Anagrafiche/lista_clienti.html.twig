@@ -34,6 +34,10 @@
           <tr>
             <td>{{ cliente.cognome }}</td>
             <td>{{ cliente.nome }}</td>
+            
+            {% for aggiungi_cliente in aggiungi_persone %}
+            <td>{{ aggiungi_cliente.nome }}</td>
+            {% endfor %}
             <td><a class="ng-modal" href="{{ path('modifica_cliente', {id: cliente.id}) }}">Edit</a></td>
           </tr>
           {% endfor %}
