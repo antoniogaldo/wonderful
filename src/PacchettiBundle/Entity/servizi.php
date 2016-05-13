@@ -26,13 +26,11 @@ class servizi
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="nuovo_pacchetto", inversedBy="servizi")
+     * @ORM\Column(name="nomeServizio", type="string", length=255)
      */
     private $nomeServizio;
-    public function __construct()
-    {
-        $this->nomeServizio = new ArrayCollection();
-    }
+    
+    
 
     /**
      * @var int
@@ -41,6 +39,13 @@ class servizi
      */
     private $costoServizio;
 
+
+    /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="nuovo_pacchetto", inversedBy="servizi")
+     */
+    private $persone;
 
 
     /**
@@ -56,11 +61,11 @@ class servizi
     /**
      * Set nomeServizio
      *
-     * @param ArrayCollection $nomeServizio
+     * @param string $nomeServizio
      *
      * @return servizi
      */
-    public function setNomeServizio($nomeServizio)
+    public function setnomeServizio($nomeServizio)
     {
         $this->nomeServizio = $nomeServizio;
 
@@ -70,9 +75,9 @@ class servizi
     /**
      * Get nomeServizio
      *
-     * @return string
+     * @return int
      */
-    public function getNomeServizio()
+    public function getnomeServizio()
     {
         return $this->nomeServizio;
     }
@@ -100,6 +105,56 @@ class servizi
     public function getCostoServizio()
     {
         return $this->costoServizio;
+    }
+
+
+
+    /**
+     * Set servizi_aggiuntivo
+     *
+     * @param ArrayCollection $servizi_aggiuntivo
+     *
+     * @return servizi
+     */
+    public function setservizi_aggiuntivo($servizi_aggiuntivo)
+    {
+        $this->servizi_aggiuntivo = $servizi_aggiuntivo;
+
+        return $this;
+    }
+
+    /**
+     * Get servizi_aggiuntivo
+     *
+     * @return string
+     */
+    public function getservizi_aggiuntivo()
+    {
+        return $this->servizi_aggiuntivo;
+    }
+
+    /**
+     * Set persone
+     *
+     * @param servizi $persone
+     *
+     * @return aggiungi_persone
+     */
+    public function setPersone($persone)
+    {
+        $this->persone = $persone;
+
+        return $this;
+    }
+
+    /**
+     * Get persone
+     *
+     * @return servizi
+     */
+    public function getPersone()
+    {
+        return $this->persone;
     }
 }
 

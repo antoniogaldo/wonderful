@@ -8,19 +8,19 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class nuovo_pacchettoFormType extends AbstractType
+class serviziFormType extends AbstractType
 {
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
         $builder
-            ->add('nomePacchetto', TextType::class, array('label' => false))
-            ->add('dataInizio',DateType::class, array('label' => false))
-            ->add('dataFine',DateType::class, array('label' => false))
-            ->add('servizi', TextType::class, array('label' => false))
+
+            ->add('servizi_aggiuntivo', EntityType::class, array('class' => 'PacchettiBundle:nuovo_pacchetto', 'choice_label' => 'nome','label' => false))
+            ->add('nomeServizio', TextType::class, array('label' => false))
+            ->add('costo_servizio', TextType::class, array('label' => false))
             ->add('save', SubmitType::class, array('label' => 'Inserisci'))
         ;
     }

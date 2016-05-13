@@ -7,7 +7,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use PacchettiBundle\Entity\nuovo_pacchetto;
+use PacchettiBundle\Entity\servizi;
 use PacchettiBundle\Form\nuovo_pacchettoFormType;
+use PacchettiBundle\Form\serviziFormType;
+
 
 
 class PacchettiController extends Controller
@@ -32,9 +35,26 @@ class PacchettiController extends Controller
             $em->persist($pacchetto);
             $em->flush(); }
 
+        $servizi = new servizi();
+
+        
+        $form2 = $this->createForm(serviziFormType::class, $servizi);
+
+        $form2->handleRequest($request);
+
+        if ($form2->isSubmitted() && $form2->isValid()) {
+
+            // Salvo cose.
+            $servizi = $form2->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($servizi);
+            $em->flush(); }
+
 
         return $this->render('PacchettiBundle:Pacchetti:index.html.twig', array(
         		'form1' => $form1->createView(),
+                'form2' => $form2->createView(),
         	));
     }
        

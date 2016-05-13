@@ -42,12 +42,20 @@ class nuovo_pacchetto
      */
     private $dataFine;
 
-    /**
+
+/**
      * @var string
      *
-     * @ORM\Column(name="servizi", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="servizi", mappedBy="aggiungi_servizi")
      */
     private $servizi;
+    public function __construct()
+    {
+        $this->servizi = new ArrayCollection();
+    }
+
+
+
 
 
     /**
@@ -135,7 +143,7 @@ class nuovo_pacchetto
     /**
      * Set servizi
      *
-     * @param string $servizi
+     * @param ArrayCollection $servizi
      *
      * @return nuovo_pacchetto
      */
