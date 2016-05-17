@@ -68,7 +68,7 @@ class AnagraficheController extends Controller
 
      public function editclientiAction(Request $request)
     {
-        $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
+        $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findOneById($request->get('id'));
 
          $form = $this->createForm(nuovo_clienteFormType::class, $clienti);
 
