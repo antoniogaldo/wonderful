@@ -50,14 +50,11 @@ class nuovo_pacchetto
      * @ORM\OneToMany(targetEntity="servizi", mappedBy="aggiungi_servizi")
      */
     private $servizi;
+
     public function __construct()
     {
         $this->servizi = new ArrayCollection();
     }
-
-
-
-
 
     /**
      * Get id

@@ -65,7 +65,7 @@ class nuovo_cliente
     private $telefono;
 
     /**
-     * @ORM\OneToMany(targetEntity="aggiungi_persone", mappedBy="persone_aggiunte")
+     * @ORM\OneToMany(targetEntity="aggiungi_persone", mappedBy="cliente")
      */
     private $personeAggiuntive;
 
