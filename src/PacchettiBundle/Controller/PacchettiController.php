@@ -57,5 +57,15 @@ class PacchettiController extends Controller
                 'form2' => $form2->createView(),
         	));
     }
+        public function viewAction(Request $request)
+    {
+        $pac = $this->getDoctrine()->getRepository('PacchettiBundle:nuovo_pacchetto')->findAll();
+        $serv = $this->getDoctrine()->getRepository('PacchettiBundle:servizi')->findAll();
+
+        return $this->render('PacchettiBundle:Pacchetti:lista_pacchetti.html.twig', array(
+            'pac' => $pac,
+            'serv' => $serv,
+        ));
+    }
        
 }
