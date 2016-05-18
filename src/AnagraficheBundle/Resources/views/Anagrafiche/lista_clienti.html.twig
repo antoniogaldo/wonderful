@@ -2,7 +2,7 @@
 {% block body %}
 <div class="container">
 
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h2>Lista clienti</h2>
     <br>
 
@@ -41,26 +41,27 @@
             <td>{{ cliente.cognome }}</td>
             
           
-            <ul><td>
+            <td>
                 {% for persona in cliente.personeAggiuntive %}
-                
+                <ul>
                  <li>{{ persona.nome }}</li>
+                 </ul>
 
                  
                          
             {% endfor %}
 </td>
-</ul>
- <ul><td>
+
+<td>
                 {% for persona in cliente.personeAggiuntive %}
-                
+                 <ul>
                  <li>{{ persona.cognome }}</li>
-
+</ul>
                  
                          
             {% endfor %}
 </td>
-</ul>
+
             <td><a class="ng-modal" href="{{ path('modifica_cliente', {id: cliente.id}) }}"><button type="button" class="btn btn-default">Edit</button></a></td>
           </tr>
           {% endfor %}
