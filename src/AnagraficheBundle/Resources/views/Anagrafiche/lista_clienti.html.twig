@@ -25,23 +25,46 @@
 
             <th>Nome</th>
             <th>Cognome</th>
-            <th></th>
+            <th>Nome supplementare</th>
+            <th>Cognome supplementare</th>
+            <th>Modifica</th>
+           
+
+
 
           </tr>
         </thead>
         <tbody>
           {% for cliente in clienti %}
           <tr>
-            <td>{{ cliente.cognome }}</td>
             <td>{{ cliente.nome }}</td>
-            <td>
+            <td>{{ cliente.cognome }}</td>
+            
+          
+            <ul><td>
+                {% for persona in cliente.personeAggiuntive %}
+                
+                 <li>{{ persona.nome }}</li>
 
-            {% for persona in cliente.personeAggiuntive %}
-            {{ persona.nome }}
-            {% endfor %}</td>
-            <td><a class="ng-modal" href="{{ path('modifica_cliente', {id: cliente.id}) }}">Edit</a></td>
+                 
+                         
+            {% endfor %}
+</td>
+</ul>
+ <ul><td>
+                {% for persona in cliente.personeAggiuntive %}
+                
+                 <li>{{ persona.cognome }}</li>
+
+                 
+                         
+            {% endfor %}
+</td>
+</ul>
+            <td><a class="ng-modal" href="{{ path('modifica_cliente', {id: cliente.id}) }}"><button type="button" class="btn btn-default">Edit</button></a></td>
           </tr>
           {% endfor %}
+          
         </tbody>
       </table>
     </div>
