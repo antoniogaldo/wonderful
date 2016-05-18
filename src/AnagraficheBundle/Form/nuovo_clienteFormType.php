@@ -20,7 +20,8 @@ class nuovo_clienteFormType extends AbstractType
         $builder
             ->add('nome', TextType::class, array('label' => false))
             ->add('cognome', TextType::class, array('label' => false))
-            ->add('data', DateType::class, array('label' => false))
+            ->add('data', DateType::class, array('placeholder' => array(
+        'year' => 'Anno', 'month' => 'Mese', 'day' => 'Giorno'),'label' => false))
             ->add('indirizzo', TextType::class, array('label' => false))
             ->add('email', TextType::class, array('label' => false))
             ->add('telefono', IntegerType::class, array('label' => false))

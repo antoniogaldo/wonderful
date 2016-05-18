@@ -20,7 +20,8 @@ class aggiungi_personeFormType extends AbstractType
             ->add('nome', TextType::class, array('label' => false))
             ->add('cognome', TextType::class, array('label' => false))
             ->add('cliente', EntityType::class, array('class' => 'AnagraficheBundle:nuovo_cliente', 'choice_label' => 'cognome','label' => false))
-            ->add('data', DateType::class, array('label' => false))
+            ->add('data', DateType::class, array('placeholder' => array(
+        'year' => 'Anno', 'month' => 'Mese', 'day' => 'Giorno'),'label' => false))
             ->add('save', SubmitType::class, array('label' => 'Inserisci'))
         ;
     }

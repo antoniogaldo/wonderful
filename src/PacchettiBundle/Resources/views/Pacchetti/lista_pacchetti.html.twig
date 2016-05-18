@@ -24,34 +24,32 @@
           <tr>
 
             <th>Pacchetto</th>
+            <th>Modifica</th>
           
            
 
+</tr>
 
-
-          </tr>
+          
         </thead>
         <tbody>
+        <tr>
           {% for pacchetto in nuovo_pacchetto %}
-          <tr>
+          
             <td>{{ pacchetto.nomePacchetto }}</td>
-            <td></td>
+            <td><a class="ng-modal"><button type="button" class="btn btn-default">Edit</button></a></td>
+            </tr>
+            {% endfor %}
+
+
+
+
             
           
-            
-
-                 
-                         
-            {% endfor %}
-</td>
-
-
-
-            <td><a><button type="button" class="btn btn-default">Edit</button></a></td>
-          </tr>
          
           
         </tbody>
+        
       </table>
     </div>
     <!-- fine colonna form aggiungi cliente -->
