@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<div class="container">
+
+  <div class="col-md-8">
+    <h2>Lista clienti</h2>
+    <br>
+
+    <div class="input-group col-sm-6">
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+      <input type="text" class="form-control" placeholder="Cerca">
+      <!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    <br>
+    <div class="panel panel-default">
+      <!-- Table -->
+      <table class="table">
+        <thead class="thead-inverse">
+
+          <tr>
+
+            <th>Pacchetto</th>
+          
+           
+
+
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for pacchetto in nuovo_pacchetto %}
+          <tr>
+            <td>{{ pacchetto.nomePacchetto }}</td>
+            <td></td>
+            
+          
+            
+
+                 
+                         
+            {% endfor %}
+</td>
+
+
+
+            <td><a><button type="button" class="btn btn-default">Edit</button></a></td>
+          </tr>
+         
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- fine colonna form aggiungi cliente -->
+
+  </div></div>
+  <!-- inizio colonna form persone aggiuntive -->
+  <div class="col-md-6">
+
+  </div>
+  <!-- fine colonna form persone aggiuntive -->
+</div>
+
+{%endblock%}

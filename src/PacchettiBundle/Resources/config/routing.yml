@@ -1,6 +1,9 @@
 crea_Pacchetto:
     path:  /crea
     defaults: { _controller: PacchettiBundle:Pacchetti:index }
+lista_Pacchetto:
+    path:  /lista
+    defaults: { _controller: PacchettiBundle:Pacchetti:view }
 
 
     

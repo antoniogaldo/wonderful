@@ -47,7 +47,7 @@ class nuovo_pacchetto
 /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="servizi", mappedBy="aggiungi_servizi")
+     * @ORM\OneToMany(targetEntity="servizi", mappedBy="persone")
      */
     private $servizi;
 
