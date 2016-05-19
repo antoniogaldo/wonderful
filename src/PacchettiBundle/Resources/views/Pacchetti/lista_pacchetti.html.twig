@@ -24,6 +24,7 @@
           <tr>
 
             <th>Pacchetto</th>
+            <th>Servizi</th>
             <th>Modifica</th>
           
            
@@ -33,14 +34,31 @@
           
         </thead>
         <tbody>
-        <tr>
+        
           {% for pacchetto in nuovo_pacchetto %}
-          
+          <tr>
             <td>{{ pacchetto.nomePacchetto }}</td>
-            <td><a class="ng-modal"><button type="button" class="btn btn-default">Edit</button></a></td>
-            </tr>
-            {% endfor %}
+            
+            
+            
+            <td>{% for servizio in pacchetto.servizi %}
+            <ul>
+                 <li>{{ servizio.nomeServizio }}</li>
+            </ul>
 
+                 
+                         
+            {% endfor %}</td>
+</td>
+
+
+
+
+            <td><a class="ng-modal" href=""><button type="button" class="btn btn-default">Edit</button></a></td>
+         </tr>
+          {% endfor %}
+           
+        </tbody>
 
 
 
@@ -48,7 +66,7 @@
           
          
           
-        </tbody>
+     
         
       </table>
     </div>
