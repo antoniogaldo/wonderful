@@ -4,6 +4,9 @@ crea_Pacchetto:
 lista_Pacchetto:
     path:  /lista
     defaults: { _controller: PacchettiBundle:Pacchetti:view }
+modifica_pacchetto:
+    path:  /pacchetto/{id}/edit
+    defaults: { _controller: PacchettiBundle:Pacchetti:editpacchetti }
 
 
     

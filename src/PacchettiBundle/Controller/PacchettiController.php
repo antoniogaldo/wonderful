@@ -68,5 +68,29 @@ class PacchettiController extends Controller
         ));
        
 }
+public function editpacchettiAction(Request $request)
+    {
+        $pacchetto = $this->getDoctrine()->getRepository('PacchettiBundle:nuovo_pacchetto')->findOneById($request->get('id'));
+
+        $form = $this->createForm(nuovo_pacchettoFormType::class, $pacchetto);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Salvo cose.
+            $pacchetto = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($pacchetto);
+            $em->flush();
+
+            return $this->redirectToRoute('lista_Pacchetto');
+
+        }
+        
+        return $this->render('PacchettiBundle:Pacchetti:edit_pacchetto.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
 
 }
