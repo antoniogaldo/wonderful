@@ -68,21 +68,21 @@ class AnagraficheController extends Controller
 
      public function editclientiAction(Request $request)
     {
-        $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findOneById($request->get('id'));
+        $cliente = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findOneById($request->get('id'));
 
-         $form = $this->createForm(nuovo_clienteFormType::class, $clienti);
+        $form = $this->createForm(nuovo_clienteFormType::class, $cliente);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // Salvo cose.
-            $clienti = $clienti->getData();
+            $cliente = $form->getData();
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($clienti);
+            $em->persist($cliente);
             $em->flush();
 
-             return $this->redirectToRoute('lista_clienti');
+            return $this->redirectToRoute('lista_anagrafiche');
 
         }
         
@@ -91,18 +91,18 @@ class AnagraficheController extends Controller
         ));
     }
    
-    public function apiListClientiAction(Request $request) {
-        $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
+    // public function apiListClientiAction(Request $request) {
+    //     $clienti = $this->getDoctrine()->getRepository('AnagraficheBundle:nuovo_cliente')->findAll();
 
-        $data = [];
-        foreach ($clienti as $cliente) {
-            $data[] = [
-                'id' => $cliente->getId(),
-                'nome' => $cliente->getNome(),
-                'cognome' => $cliente->getCognome(),
-            ];
-        }
+    //     $data = [];
+    //     foreach ($clienti as $cliente) {
+    //         $data[] = [
+    //             'id' => $cliente->getId(),
+    //             'nome' => $cliente->getNome(),
+    //             'cognome' => $cliente->getCognome(),
+    //         ];
+    //     }
 
-        return new JsonResponse($data);
-    }
+    //     return new JsonResponse($data);
+    // }
 }
