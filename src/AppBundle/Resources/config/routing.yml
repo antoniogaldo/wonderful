@@ -1,7 +1,5 @@
 stampa_pdf:
-    path:  /pdf
+    path:  /pdf/{id}
     defaults: { _controller: AppBundle:Demo:pdf }
-
-
-
-    
+    requirements:
+      id: \d+

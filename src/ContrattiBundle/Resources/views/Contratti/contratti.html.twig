@@ -1,8 +1,13 @@
 {% extends '::base.html.twig' %}
+
 {% block body %}
-{% for cliente in clienti %}
- <small>{{cliente.nome}}</small>
-  {% endfor %}
- {% endblock %}
+
+	<ul>
+	{% for cliente in clienti %}
+		<li><a href="{{ url('stampa_pdf', {id: cliente.id} ) }}">{{cliente.nome}}</small></a>
+	{% endfor %}
+	</ul>
+
+{% endblock %}
 
 

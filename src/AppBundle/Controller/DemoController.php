@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 
@@ -17,7 +18,14 @@ class DemoController extends Controller
      */
     public function pdfAction(Request $request)
     {
-        $html = $this->renderView('AppBundle:Demo:pdf.html.twig');
+
+        $cliente = $this->getDoctrine()
+            ->getRepository('AnagraficheBundle:nuovo_cliente')
+            ->findOneById($request->get('id'));
+
+        $html = $this->renderView('AppBundle:Demo:pdf.html.twig', [
+            'cliente' => $cliente,
+        ]);
 
 
         $filename = sprintf('test-%s.pdf', date('Y-m-d'));
