@@ -1,0 +1,7 @@
+stampa_pdf:
+    path:  /pdf
+    defaults: { _controller: AppBundle:Demo:pdf }
+
+
+
+    
