@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new AnagraficheBundle\AnagraficheBundle(),
             new PacchettiBundle\PacchettiBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
-
+            new ContrattiBundle\ContrattiBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

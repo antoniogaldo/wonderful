@@ -1,0 +1,7 @@
+crea_contratto:
+    path:  /crea
+    defaults: { _controller: ContrattiBundle:Contratti:index }
+
+
+
+    

@@ -1,3 +1,7 @@
+contratti:
+    resource: "@ContrattiBundle/Resources/config/routing.yml"
+    prefix:   /contratti
+
 pacchetti:
     resource: "@PacchettiBundle/Resources/config/routing.yml"
     prefix:   /pacchetti
