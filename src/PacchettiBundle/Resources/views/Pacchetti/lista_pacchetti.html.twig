@@ -3,7 +3,7 @@
 <div class="container">
 
   <div class="col-md-8">
-    <h2>Lista clienti</h2>
+    <h2>Lista pacchetti</h2>
     <br>
 
     <div class="input-group col-sm-6">
@@ -25,6 +25,7 @@
 
             <th>Pacchetto</th>
             <th>Servizi</th>
+            <th>Costo</th>
             <th>Modifica</th>
           
            
@@ -42,14 +43,21 @@
             
             
             <td>{% for servizio in pacchetto.servizi %}
-            <ul>
-                 <li>{{ servizio.nomeServizio }}</li>
-            </ul>
+                <ul>
+                  <li>{{ servizio.nomeServizio }}</li>
 
-                 
-                         
-            {% endfor %}</td>
-</td>
+                </ul>
+            {% endfor %}
+            </td>
+
+            <td>{% for servizio in pacchetto.servizi %}
+                <ul>
+                  <li>{{ servizio.costoServizio }} €</li>
+
+                </ul>
+            {% endfor %}
+            </td>
+            </td>
 
 
 
