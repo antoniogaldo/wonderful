@@ -32,9 +32,11 @@ class DemoController extends Controller
 
         return new Response(
             
+            
             $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
             200,
             [
+
                 'Content-Type'        => 'application/pdf',
                 'Content-Disposition' => sprintf('attachment; filename="%s"', $filename),
             ]

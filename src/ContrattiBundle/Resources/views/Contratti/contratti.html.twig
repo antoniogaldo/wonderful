@@ -1,13 +1,23 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-
+<div class="container">
+  
+  <!-- inizio colonna form aggiungi cliente -->
+        <div class="col-md-6">
+        <h2>Crea nuovo contratto</h2>
+          <br>
 	<ul>
 	{% for cliente in clienti %}
-		<li><a href="{{ url('stampa_pdf', {id: cliente.id} ) }}">{{cliente.nome}}</small></a>
-	{% endfor %}
-	</ul>
 
+		<li>{{cliente.nome}} {{cliente.cognome}}
+		
+	
+
+	
+
+<a href="{{ url('stampa_pdf', {id: cliente.id} ) }}"><button type="button" class="btn btn-default">Edit</button></a></li></ul>
+{% endfor %}
 {% endblock %}
 
 

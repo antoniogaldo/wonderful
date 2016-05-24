@@ -40,7 +40,7 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
+    
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -78,6 +78,8 @@ knp_snappy:
         options:
             - { name: 'viewport-size', value: ‘1024x768’ }
             - { name: 'page-size', value: 'A4' }
+
+
 
 
        
